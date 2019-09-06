@@ -6,7 +6,7 @@
 					<div class="card py-3 my-3">
 						<%= image_tag tarea.photo, class: 'card-img-top' %>
 						<div class="body">
-							<h5><%=link_to tarea.name, root_path %></h5>
+							<h5><%= link_to tarea.name, tarea_path(tarea.id)%></h5>
 							<% if tarea.todos.compact[0].completed? %>
 							<%= link_to "Completa", tarea_todos_path(tarea), class: 'btn btn-success', method: :post %>
 							<% else %>

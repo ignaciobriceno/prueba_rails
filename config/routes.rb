@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'todos/create'
-  resources :tareas, only: :index do
-  	resources :todos
+  resources :tareas, only: [:index, :show] do
+  	resources :todos, only: :create
   end
 
   root 'tareas#index'
