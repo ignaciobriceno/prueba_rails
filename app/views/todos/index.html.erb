@@ -1,0 +1,14 @@
+<div class="row my-5 p-2">
+
+	<div class="col-md-6">
+		<h2 class="text-center">¡Tareas completadas!</h2>
+		<% @completos.each do |todo| %>
+			<div class="card p-2 m-4 bg-secondary">
+				<div class="card-title bg-dark text-light font-weight-bold text-center"><%= todo.tarea.name %> </div>
+				<div class="card-title bg-dark text-light font-weight-bold text-center"><%= todo.user.email %> </div>
+				<div class="card-body text-center btn btn-success"><%= todo.completed %> </div>
+			</div>	
+		<% end %>
+	</div>
+	
+</div>

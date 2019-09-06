@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row">
+		<% @tareas.each_slice(3) do |row| %>
+			<% row.each do |tarea| %>
+				<div class="col">
+					<div class="card py-3 my-3">
+						<%= image_tag tarea.photo, class: 'card-img-top' %>
+						<div class="body">
+							<h5><%=link_to tarea.name, root_path %></h5>
+							<% if tarea.todos.compact[0].completed? %>
+							<%= link_to "Completa", tarea_todos_path(tarea), class: 'btn btn-success', method: :post %>
+							<% else %>
+							<%= link_to "No completa", tarea_todos_path(tarea), class: 'btn btn-danger', method: :post %>
+							<% end %>
+							
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<div class="w-100"> </div>
+		<% end %>
+	</div>
+</div>
